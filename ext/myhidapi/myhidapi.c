@@ -1,6 +1,4 @@
-#include <ruby.h>
-#include <hidapi.h>
-#include <stdlib.h>
+#include "myhidapi.h"
 
 VALUE mMyHIDAPI;
 VALUE cMyHIDAPIHandle;
