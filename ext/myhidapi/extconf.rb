@@ -1,25 +1,10 @@
-require 'mkmf'
+# frozen_string_literal: true
 
-ldflags = cppflags = nil
-if RbConfig::CONFIG["host_os"] =~ /darwin/
-  begin
-    brew_prefix = `brew --prefix hidapi`.chomp
-    ldflags   = "#{brew_prefix}/lib"
-    cppflags  = "#{brew_prefix}/include"
-    pkg_conf  = "#{brew_prefix}/lib/pkgconfig"
+require "mkmf"
 
-    # pkg_config should be less error prone than parsing compiler
-    # commandline options, but we need to set default ldflags and cpp flags
-    # in case the user doesn't have pkg-config installed
-    ENV['PKG_CONFIG_PATH'] ||= pkg_conf
-  rescue
-  end
-end
+append_cflags("-fvisibility=hidden")
 
 pkg_config 'hidapi'
+dir_config("hidapi")
 
-dir_config("hidapi", cppflags, ldflags)
-
-raise "Install hidapi (brew install hidapi)" unless have_header 'hidapi.h'
-
-create_makefile 'myhidapi'
+create_makefile("myhidapi/myhidapi")

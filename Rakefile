@@ -1,41 +1,18 @@
-# -*- ruby -*-
+# frozen_string_literal: true
 
-require 'rubygems'
+require "bundler/gem_tasks"
+require "rake/extensiontask"
+require 'rake/packagetask'
 
-tries = 0
-begin
-  require 'hoe'
-  require 'minitest'
-  require 'rake/extensiontask'
-rescue LoadError
-  tries += 1
-  Gem.install 'hoe'
-  Gem.install 'rake-compiler'
-  Gem.install 'hoe-gemspec'
-  Gem.install 'hoe-git'
-  Gem.install 'minitest'
-  raise unless tries < 10
-  retry
+task build: :compile
+
+GEMSPEC = Gem::Specification.load("myhidapi.gemspec")
+
+Rake::ExtensionTask.new("myhidapi", GEMSPEC) do |ext|
+  ext.lib_dir = "lib/myhidapi"
 end
 
-Hoe.plugin :minitest
-Hoe.plugin :gemspec # `gem install hoe-gemspec`
-Hoe.plugin :git     # `gem install hoe-git`
-
-HOE = Hoe.spec 'myhidapi' do
-  developer('Aaron Patterson', 'tenderlove@ruby-lang.org')
-  license "MIT"
-  self.readme_file   = 'README.md'
-  self.history_file  = 'CHANGELOG.md'
-  self.extra_rdoc_files  = FileList['*.md']
-
-  self.spec_extras = {
-    :extensions => ["ext/myhidapi/extconf.rb"],
-    :required_ruby_version => '>= 2.3.0'
-  }
+Gem::PackageTask.new(GEMSPEC) do |pkg|
 end
 
-Rake::ExtensionTask.new("myhidapi", HOE.spec) do |ext|
-end
-
-# vim: syntax=ruby
+task default: %i[clobber compile]

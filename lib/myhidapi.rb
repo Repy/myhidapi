@@ -1,7 +1,8 @@
-require "myhidapi.so"
+# frozen_string_literal: true
+
+require_relative "myhidapi/myhidapi.so"
 
 module MyHIDAPI
-  VERSION = '1.0.2'
 
   class DeviceInfo
     attr_reader :vendor_id, :product_id, :path, :serial_number, :manufacturer_string, :product_string, :usage, :interface_number
