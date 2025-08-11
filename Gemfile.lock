@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    myhidapi (1.0.3)
+    myhidapi (1.0.4)
 
 GEM
   remote: https://rubygems.org/
