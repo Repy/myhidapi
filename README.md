@@ -1,12 +1,16 @@
 # MyHIDAPI
 
-* https://github.com/tenderlove/myhidapi
+* https://github.com/Repy/myhidapi
 
 ## DESCRIPTION:
 
 This is a small wrapper around HIDAPI.  I couldn't get other HIDAPI wrappers to
 work, so I wrote this one.  I'm using it to communicate with my keyboard, so
 it really only supports enough of the HIDAPI to do that.
+
+This gem is a fork from the original work by Aaron Patterson ([@tenderlove](https://github.com/tenderlove)).
+
+* **Original Repository:** https://github.com/tenderlove/myhidapi
 
 ## FEATURES/PROBLEMS:
 
@@ -52,6 +56,7 @@ This depends on libhidapi.
 (The MIT License)
 
 Copyright (c) 2019 Aaron Patterson
+Copyright (c) 2024 Repy
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
