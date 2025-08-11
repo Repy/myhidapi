@@ -1,16 +1,18 @@
 # MyHIDAPI
 
-* https://github.com/Repy/myhidapi
-
-## DESCRIPTION:
+## DESCRIPTION
 
 This is a small wrapper around HIDAPI.
 I couldn't get other HIDAPI wrappers to work, so I wrote this one.
 I'm using it to communicate with my keyboard, so it really only supports enough of the HIDAPI to do that.
 
+## DESCRIPTION
+
+* https://github.com/Repy/myhidapi
+
 This gem is a fork from the original work by Aaron Patterson ([@tenderlove](https://github.com/tenderlove)).
 
-* **Original Repository:** https://github.com/tenderlove/myhidapi
+* Original Repository: https://github.com/tenderlove/myhidapi
 
 ## SUPPORTS
 
@@ -25,13 +27,13 @@ This gem works on the following platforms, leveraging the capabilities of the un
     *   USB
     *   Bluetooth
 
-## FEATURES/PROBLEMS:
+## FEATURES/PROBLEMS
 
 * Incomplete
 * No tests
 * Seems to work (for me)
 
-## SYNOPSIS:
+## SYNOPSIS
 
 ```ruby
 require 'myhidapi'
@@ -51,11 +53,11 @@ while true
 end
 ```
 
-## REQUIREMENTS:
+## REQUIREMENTS
 
 This depends on **hidapi**.
 
-## INSTALL:
+## INSTALL
 
 First, install the **hidapi** library. Here are instructions for common platforms:
 
@@ -84,6 +86,6 @@ Once `hidapi` is installed, you can install this gem:
 gem install myhidapi
 ```
 
-## LICENSE:
+## LICENSE
 
 The gem is available as open source under the terms of the [MIT License](LICENSE.md).
