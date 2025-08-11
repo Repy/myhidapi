@@ -23,7 +23,4 @@ module MyHIDAPI
     end
   end
 
-  def self.build_device_info(*args)
-    DeviceInfo.new(*args)
-  end
 end
