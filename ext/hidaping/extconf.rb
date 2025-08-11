@@ -24,4 +24,4 @@ else
 end
 
 create_header
-create_makefile("myhidapi/myhidapi")
+create_makefile("hidaping/hidaping")

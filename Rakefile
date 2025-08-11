@@ -6,10 +6,10 @@ require 'rake/packagetask'
 
 task build: :compile
 
-GEMSPEC = Gem::Specification.load("myhidapi.gemspec")
+GEMSPEC = Gem::Specification.load("hidaping.gemspec")
 
-Rake::ExtensionTask.new("myhidapi", GEMSPEC) do |ext|
-  ext.lib_dir = "lib/myhidapi"
+Rake::ExtensionTask.new("hidaping", GEMSPEC) do |ext|
+  ext.lib_dir = "lib/hidaping"
 end
 
 Gem::PackageTask.new(GEMSPEC) do |pkg|

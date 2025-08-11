@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/myhidapi/version"
+require_relative "lib/hidaping/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "myhidapi"
-  spec.version = MyHIDAPI::VERSION
+  spec.name = "hidaping"
+  spec.version = HIDAPING::VERSION
   spec.authors = ["Repy", "Aaron Patterson"]
   spec.email = ["gamecube02+git@gmail.com", "tenderlove@ruby-lang.org"]
 
@@ -18,11 +18,11 @@ This gem is a fork from the original work by Aaron Patterson (@tenderlove).
 EOF
 
   spec.licenses    = ['MIT']
-  spec.homepage = "https://github.com/Repy/myhidapi"
+  spec.homepage = "https://github.com/Repy/hidaping"
   spec.required_ruby_version = ">= 3.2.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/Repy/myhidapi"
+  spec.metadata["source_code_uri"] = "https://github.com/Repy/hidaping"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -36,6 +36,6 @@ EOF
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.extensions = ["ext/myhidapi/extconf.rb"]
+  spec.extensions = ["ext/hidaping/extconf.rb"]
 
 end

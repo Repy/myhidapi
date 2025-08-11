@@ -30,14 +30,14 @@ jobs:
           mkdir -p ~/.gem
           cat <<AAA > ~/.gem/.mirrorrc
           ---
-          - from: https://repy.github.io/myhidapi
+          - from: https://repy.github.io/hidaping
             to: /home/runner/gemrepos
           AAA
           mkdir -p /home/runner/gemrepos/gems
           gem install rubygems-mirror
           gem mirror
           
-          cp ./pkg/myhidapi-*.gem /home/runner/gemrepos/gems/
+          cp ./pkg/hidaping-*.gem /home/runner/gemrepos/gems/
           cd /home/runner/gemrepos
           gem generate_index
       - name: Setup Pages

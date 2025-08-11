@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module MyHIDAPI
+module HIDAPING
   VERSION = '1.1.0'
 end

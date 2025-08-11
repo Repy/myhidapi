@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    myhidapi (1.1.0)
+    hidaping (1.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -15,7 +15,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  myhidapi!
+  hidaping!
   rake
   rake-compiler
 

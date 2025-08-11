@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "myhidapi/myhidapi.so"
+require_relative "hidaping/hidaping.so"
 
-module MyHIDAPI
+module HIDAPING
 
   class DeviceInfo
     attr_reader :vendor_id, :product_id, :path, :serial_number, :manufacturer_string, :product_string, :usage, :interface_number
@@ -19,7 +19,7 @@ module MyHIDAPI
     end
 
     def open
-      MyHIDAPI.open vendor_id, product_id
+      HIDAPING.open vendor_id, product_id
     end
   end
 

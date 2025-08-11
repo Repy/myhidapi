@@ -1,6 +1,6 @@
-require 'myhidapi'
+require 'hidaping'
 
-devices = MyHIDAPI.enumerate(0x0, 0x0)
+devices = HIDAPING.enumerate(0x0, 0x0)
 
 for d in devices
     printf("0x%04x, 0x%04x, %s\n", d.vendor_id, d.product_id, d.product_string)

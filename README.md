@@ -1,4 +1,6 @@
-# MyHIDAPI
+# HIDAPING
+
+Next generation HIDAPI wrapper for Ruby
 
 ## DESCRIPTION
 
@@ -8,7 +10,7 @@ I'm using it to communicate with my keyboard, so it really only supports enough 
 
 ## DESCRIPTION
 
-* https://github.com/Repy/myhidapi
+* https://github.com/Repy/hidaping
 
 This gem is a fork from the original work by Aaron Patterson ([@tenderlove](https://github.com/tenderlove)).
 
@@ -36,15 +38,15 @@ This gem works on the following platforms, leveraging the capabilities of the un
 ## SYNOPSIS
 
 ```ruby
-require 'myhidapi'
+require 'hidaping'
 
-devices = MyHIDAPI.enumerate(0x0, 0x0)
+devices = HIDAPING.enumerate(0x0, 0x0)
 
 for d in devices
     printf("0x%04x, 0x%04x, %s\n", d.vendor_id, d.product_id, d.product_string)
 end
 
-handle = MyHIDAPI.open(0x045e, 0x028e)
+handle = HIDAPING.open(0x045e, 0x028e)
 
 while true
     report_raw = handle.read_timeout(64, 500)
@@ -83,7 +85,7 @@ First, install the **hidapi** library. Here are instructions for common platform
 Once `hidapi` is installed, you can install this gem:
 
 ```sh
-gem install myhidapi
+gem install hidaping
 ```
 
 ## LICENSE

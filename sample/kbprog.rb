@@ -1,4 +1,4 @@
-require 'myhidapi'
+require 'hidaping'
 require 'optparse'
 
 class TeeloKB
@@ -24,7 +24,7 @@ class TeeloKB
   end
 
   def self.find
-    MyHIDAPI.enumerate(0x0, 0x0).find { |dev| dev.product_string == "ErgoDox EZ" }
+    HIDAPING.enumerate(0x0, 0x0).find { |dev| dev.product_string == "ErgoDox EZ" }
   end
 
   def self.open

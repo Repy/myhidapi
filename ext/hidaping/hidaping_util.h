@@ -5,7 +5,7 @@
 
 #define BUF_SIZE 4096
 
-static VALUE myhidapi_wcstombs(wchar_t *str) {
+static VALUE hidaping_wcstombs(wchar_t *str) {
     char buf[BUF_SIZE];
     int len;
     len = wcstombs(buf, str, BUF_SIZE);
