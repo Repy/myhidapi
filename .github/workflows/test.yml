@@ -1,0 +1,53 @@
+name: Test on All OS
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: 
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+
+    steps:
+      - name: Clone
+        uses: actions/checkout@v4
+      - name: Set up Ruby 3.4.5
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4.5
+
+      - name: Run tests (Ubuntu)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt install -y libhidapi-dev
+          gem install bundler
+          bundle install
+          bundle exec rake compile
+          bundle exec ruby test/test.rb
+
+      - name: Run tests (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          pacman --noconfirm -S mingw-w64-ucrt-x86_64-hidapi
+          gem install bundler
+          bundle install
+          bundle exec rake compile
+          bundle exec ruby test/test.rb
+
+      - name: Run tests (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install hidapi
+          gem install bundler
+          bundle install
+          bundle exec rake compile
+          sudo bundle exec ruby test/test.rb

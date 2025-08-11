@@ -48,7 +48,7 @@ static VALUE rb_hid_open_path(VALUE mod, VALUE path) {
     }
 }
 
-void Init_myhidapi() {
+extern void Init_myhidapi(void) {
     mMyHIDAPI = rb_define_module("MyHIDAPI");
     rb_define_singleton_method(mMyHIDAPI, "enumerate", enumerate, 2);
     rb_define_singleton_method(mMyHIDAPI, "open", rb_hid_open, 2);

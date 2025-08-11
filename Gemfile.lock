@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    myhidapi (1.0.4)
+    myhidapi (1.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -12,6 +12,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   myhidapi!

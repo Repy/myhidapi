@@ -74,7 +74,8 @@ First, install the **hidapi** library. Here are instructions for common platform
 *   **Ubuntu / Debian**
 
     ```sh
-    sudo apt-get install libhidapi-dev
+    sudo apt update
+    sudo apt install libhidapi-dev
     ```
 
 Once `hidapi` is installed, you can install this gem:

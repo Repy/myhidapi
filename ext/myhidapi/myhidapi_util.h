@@ -1,6 +1,7 @@
-#include <hidapi.h>
-#include <ruby.h>
-#include <stdlib.h>
+#ifndef MY_HIDAPI_UTIL_H
+#define MY_HIDAPI_UTIL_H
+
+#include "common.h"
 
 #define BUF_SIZE 4096
 
@@ -14,3 +15,5 @@ static VALUE myhidapi_wcstombs(wchar_t *str) {
         return Qnil;
     }
 }
+
+#endif // MY_HIDAPI_UTIL_H
